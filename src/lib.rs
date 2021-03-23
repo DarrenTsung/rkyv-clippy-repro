@@ -1,9 +1,9 @@
 use rkyv::*;
 
-#[derive(Archive, Debug, Clone, Deserialize, Serialize, PartialEq)]
+#[derive(Archive, Deserialize, Serialize)]
 pub struct Foo(u32);
 
-#[derive(Archive, Debug, Clone, Deserialize, Serialize, PartialEq)]
+#[derive(Archive, Deserialize, Serialize)]
 pub struct Bar {
     id: u32,
 }
