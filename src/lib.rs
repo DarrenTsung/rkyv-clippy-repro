@@ -1,9 +1,19 @@
 use rkyv::*;
 
-#[derive(Archive, Deserialize, Serialize)]
-pub struct Foo(u32);
+macro_rules! generate_enums {
+    ($($enum_name:ident$(,)*)*) => {
+        $(
+            #[derive(Archive)]
+            pub enum $enum_name {
+                HasInput,
+            }
+        )*
+    };
+}
 
-#[derive(Archive, Deserialize, Serialize)]
-pub struct Bar {
-    id: u32,
+generate_enums!(Foo, Baz);
+
+#[derive(Archive)]
+pub enum Bar {
+    HasInput,
 }

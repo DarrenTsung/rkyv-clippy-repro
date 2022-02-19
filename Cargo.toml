@@ -5,4 +5,4 @@ name = "rkyv-clippy-repro"
 version = "0.1.0"
 
 [dependencies]
-rkyv = "0.4"
+rkyv = "0.7.32"
